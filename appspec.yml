@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+   - source: /
+     destination: /var/apps/sso/
+permissions:
+   - object: /var/apps/sso/
+     pattern: "**"
+     owner: centos
+     group: centos
+     mode: 755
+     type:
+hooks:
+   BeforeInstall:
+   - location: scripts/beforeInstallServerless.sh
+     runas: root
+   AfterInstall:
+   - location: scripts/afterInstallServerless.sh
+     runas: root
+   # ApplicationStart:
+   #  - location: scripts/startNode.sh
+   #    runas: root

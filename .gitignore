@@ -1,0 +1,15 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+config.js
+
+# AWS cli
+aws
+
+# Editors
+.vscode
+
+./sso
